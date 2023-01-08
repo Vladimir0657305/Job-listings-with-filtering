@@ -9,7 +9,7 @@ export default function Main() {
     const { isFilterPress, setIsFilterPress } = useContext(filterContext);
     const { filterData, setFilterData } = useContext(filterContext);
     const { uniq, setUniq } = useContext(filterContext);
-    const [selectedItem, setSelectedItem] = useState([]);
+    
 
     useEffect(() => {
         // console.log(filterData);
