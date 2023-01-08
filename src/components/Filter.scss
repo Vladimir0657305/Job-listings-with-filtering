@@ -1,0 +1,46 @@
+.filter-block {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    margin: 30px 40px 0 40px;
+    background-color: #fff;
+    // border: 1px solid red;
+    box-shadow: 0 4px 8px 0 rgba(96, 176, 176, 0.2), 0 6px 20px 0 rgba(96, 176, 176, 0.2);
+    
+    border: none;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    border-radius: 5px;
+}
+.buttonStyleFilter {
+    font-size: 1rem;
+    color: #60b0b0;
+    font-weight: 700;
+    border-radius: 4px;
+    border: none;
+    background-color: #dfefef;
+    padding: 7px 10px;
+    margin: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    & svg {
+        height: 32px;
+        width: 32px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        padding: 0;
+        margin: -10px -10px -10px 0;
+        background-color: #60b0b0;
+        &:hover {
+        fill: #fff;
+        background-color: #000;
+    }
+    }
+
+    
+}
