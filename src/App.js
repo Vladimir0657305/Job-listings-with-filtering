@@ -2,8 +2,9 @@ import Header from './components/Header';
 import Main from './components/Main';
 import Filter from './components/Filter';
 import { createContext, useEffect, useState } from 'react';
-import { motion, LayoutGroup} from 'framer-motion';
+import Footer from './components/Footer';
 import './App.css';
+
 
 
 export var filterContext = createContext('');
@@ -34,15 +35,15 @@ function App() {
 
   return (
     <filterContext.Provider value={{ isFilterPress, setIsFilterPress, filterData, setFilterData, selectedData, setSelectedData, updateFilterButton, setUpdateFilterButton }}>
-      
-        <div key={uuidv4()} className="App" >
-          <Header />
-          {
-            selectedData.length > 0 ? <Filter /> : <Main />
-          }
 
-        </div>
-      
+      <div key={uuidv4()} className="App" >
+        <Header />
+        {
+          selectedData.length > 0 ? <Filter /> : <Main />
+        }
+        <Footer />
+      </div>
+
     </filterContext.Provider>
   );
 }

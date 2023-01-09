@@ -8,13 +8,11 @@ export default function Main() {
 
     return (
         <LayoutGroup initial={false}>
-            <motion.div key={uuidv4()}  initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="main-block" >
+            <motion.div key={uuidv4()} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="main-block" >
                 {
                     dataArr.map((item, ind) => <Card key={ind} items={item} />)
                 }
-
             </motion.div>
-
         </LayoutGroup>
     );
 }
