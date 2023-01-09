@@ -1,3 +1,4 @@
+[![image](https://github.com/Vladimir0657305/Job-listings-with-filtering/blob/main/Job-listings-with-filtering.gif)](https://github.com/Vladimir0657305/Job-listings-with-filtering)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
