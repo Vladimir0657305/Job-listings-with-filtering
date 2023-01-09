@@ -5,9 +5,10 @@ import Card from './Card';
 import './Filter.scss';
 
 export default function Filter() {
-    const { uniq, setUniq } = useContext(filterContext);
+    const { v4: uuidv4 } = require('uuid');
+    const { selectedData, setSelectedData } = useContext(filterContext);
     const [selectedItem, setSelectedItem] = useState([]);
-    let selectedId = [];
+    let selected = [];
     const svg = <svg height="16 " viewBox="0 0 200 200" width="16" >
         <path d="M114,100l49-49a9.9,9.9,0,0,0-14-14L100,86,51,37A9.9,9.9,0,0,0,37,51l49,49L37,149a9.9,9.9,0,0,0,14,14l49-49,49,49a9.9,9.9,0,0,0,14-14Z" />
     </svg>
@@ -24,29 +25,29 @@ export default function Filter() {
         let temp = [];
         temp = [...temp, dataArr[key].id, dataArr[key].languages, dataArr[key].level, dataArr[key].role, dataArr[key].tools];
         let out = temp.flat(2);
-        for (let j = 0; j < uniq.length; j++) {
-            if (out.includes(uniq[j])) selectedId.push(dataArr[key].id);
+        for (let j = 0; j < selectedData.length; j++) {
+            if (out.includes(selectedData[j])) selected.push(dataArr[key].id);
         }
     }
 
-    let newDataArr = dataArr.filter(obj => { return selectedId.includes(obj.id) })
+    let newDataArr = dataArr.filter(obj => { return selected.includes(obj.id) })
 
     const onClickButtonFilter = () => {
 
     }
     
-    console.log('uniq===',uniq);
+    // console.log('uniq===', uniq);
 
     return (
         <>
             
             <div className='card-body filter-block'>
                 {
-                    uniq.map(item => <span key={item + 10}> <button onClick={onClickButtonFilter} className='buttonStyleFilter' key={item}>{item} {svg}</button> </span>)
+                    selectedData.map(item => <span key={uuidv4()}> <button onClick={onClickButtonFilter} className='buttonStyleFilter' key={item}>{item} {svg}</button> </span>)
                 }
             </div>
                 {
-                    newDataArr.map((item, ind) => <Card key={ind} items={item} />)
+                newDataArr.map((item, ind) => <Card key={uuidv4()} items={item} />)
                 }
 
             {/* {

@@ -8,23 +8,28 @@ import dataArr from '../data.json';
 export default function Main() {
     const { isFilterPress, setIsFilterPress } = useContext(filterContext);
     const { filterData, setFilterData } = useContext(filterContext);
-    const { uniq, setUniq } = useContext(filterContext);
+    const { selectedData, setSelectedData } = useContext(filterContext);
     
+    // console.log('MAIN!!!!!!!!!!!!!!!!!', isFilterPress, 'filterData=====',filterData);
 
-    useEffect(() => {
-        // console.log(filterData);
-        let uniqArr = Array.from(new Set(filterData));
-        // setUniq(prev => [...prev, uniqArr]);
-        setUniq(Array.from(new Set(filterData)));
-        // console.log(uniq);
-        // uniq
-        setIsFilterPress(false);
-    }, [isFilterPress])
+    // useEffect(() => {
+    //     console.log('MAIN-USEEFFECT-filterData==', filterData, 'isFilterPress==', isFilterPress);
+    //     // console.log(Array.from(new Set(filterData)).length);
+    //     let uniqArr = Array.from(new Set(filterData));
+    //     // uniqArr.length ? setSelectedId(uniqArr) : null;
+    //     // if (uniqArr.length) setSelectedId(uniqArr)
+    //     // setSelectedId(prev => [...prev, uniqArr]);
+    //     console.log('WORK')
+    //     setSelectedData( uniqArr);
+    //     console.log('MAIN-USEEFFECT-selectedData==', selectedData);
+    //     // uniq
+    //     setIsFilterPress(false);
+    // }, [isFilterPress, filterData]);
 
-    const onClickButton = (event) => {
+    // const onClickButton = (event) => {
         
-            console.log(event)
-    }
+    //         console.log(event)
+    // }
             
     return(
         <>

@@ -10,19 +10,20 @@ export var filterContext = createContext('');
 function App() {
   const [isFilterPress, setIsFilterPress] = useState(false);
   const [filterData, setFilterData] = useState([]);
-  const [uniq, setUniq] = useState([]);
+  const [selectedData, setSelectedData] = useState([]);
 
-  // console.log(filterData);
-  // console.log(uniq);
+  console.log('AAAPPPPPP+++', isFilterPress, 'filterData===', filterData, 'selectedData==', selectedData);
+  // console.log(selectedId);
+  // console.log(isFilterPress);
   
   
 
   return (
-    <filterContext.Provider value={{ isFilterPress, setIsFilterPress, filterData, setFilterData, uniq, setUniq } }>
+    <filterContext.Provider value={{ isFilterPress, setIsFilterPress, filterData, setFilterData, selectedData, setSelectedData } }>
       <div className="App">
         <Header />
         {
-          uniq.length > 0 ? <Filter /> : <Main />
+          selectedData.length > 0 ? <Filter /> : <Main />
         }
         
       </div>
