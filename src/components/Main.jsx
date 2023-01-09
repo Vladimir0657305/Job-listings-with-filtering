@@ -13,6 +13,8 @@ export default function Main() {
 
     useEffect(() => {
         // console.log(filterData);
+        let uniqArr = Array.from(new Set(filterData));
+        // setUniq(prev => [...prev, uniqArr]);
         setUniq(Array.from(new Set(filterData)));
         // console.log(uniq);
         // uniq

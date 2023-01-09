@@ -11,7 +11,15 @@ export default function Card(items) {
     const onClickButton = (event) => {
         let temp = '';
         event.obj ? temp = event.obj : temp = event;
-        setFilterData(prev => [...prev, temp] );
+        if (filterData.includes(temp)) {
+            setFilterData(prev => prev.filter(_id => _id != temp));
+            console.log(filterData);
+        }
+        else {
+            setFilterData(prev => [...prev, temp])
+            console.log(filterData);
+        }
+        // setFilterData(prev => [...prev, temp] );
         setIsFilterPress(true);
     }
 
