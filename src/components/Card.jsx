@@ -1,4 +1,4 @@
-import { createRef, useContext, useState } from 'react';
+import { createRef, useContext, useEffect, useState } from 'react';
 import { filterContext } from '../App';
 import './Card.scss';
 
@@ -6,10 +6,10 @@ import './Card.scss';
 export default function Card(items) {
     const { v4: uuidv4 } = require('uuid');
     const param = items.items;
-    const {isFilterPress, setIsFilterPress} = useContext(filterContext);
-    const {filterData, setFilterData} = useContext(filterContext);
+    const { isFilterPress, setIsFilterPress } = useContext(filterContext);
+    const { filterData, setFilterData } = useContext(filterContext);
     const { selectedData, setSelectedData } = useContext(filterContext);
-    let uniqArr = [];
+    // let uniqArr = [];
 
     const onClickButton = (event) => {
         console.log(event);
@@ -19,23 +19,18 @@ export default function Card(items) {
         if (filterData.includes(temp)) {
             setFilterData(prev => prev.filter(_id => _id != temp));
             console.log(filterData);
-            uniqArr = Array.from(new Set(filterData));
-            console.log('uniqArr==', uniqArr, );
-            setSelectedData(prev =>[...prev, uniqArr]);
         }
         else {
-            setFilterData(prev => [...prev, temp])
+            setFilterData(filterData => [...filterData, temp]);
             console.log(filterData);
-            uniqArr = Array.from(new Set(filterData));
-            console.log('uniqArr==', uniqArr);
-            setSelectedData(prev => [...prev, uniqArr]);
         }
-
         // let uniqArr = Array.from(new Set(filterData));
         // setSelectedData(prev =>  uniqArr);
-
-        // setIsFilterPress(true);
+        setIsFilterPress(true);
     }
+
+
+    
 
     return (
         <>
@@ -66,10 +61,10 @@ export default function Card(items) {
                     <span> <button className='buttonStyle' data-key={param.id} data-role={param.role} onClick={() => onClickButton(param.role)} key={uuidv4()} >{param.role}</button> </span>
                     <span> <button className='buttonStyle' data-key={param.id} data-level={param.level} onClick={() => onClickButton(param.level)} key={uuidv4()} >{param.level}</button> </span>
                     {
-                        param.languages.map((obj, i) => <span key={obj + i}> <button key={uuidv4()} data-key={obj.id} className='buttonStyle' data-languages={obj} onClick={() => onClickButton( { obj } )}  >{obj}</button> </span>)
+                        param.languages.map((obj, i) => <span key={obj + i}> <button key={uuidv4()} data-key={obj.id} className='buttonStyle' data-languages={obj} onClick={() => onClickButton({ obj })}  >{obj}</button> </span>)
                     }
                     {
-                        param.tools.map((obj, i) => <span key={obj + i}> <button key={uuidv4()} data-key={obj.id} className='buttonStyle' data-tools={obj} onClick={() => onClickButton({obj})}  >{obj}</button> </span>)
+                        param.tools.map((obj, i) => <span key={obj + i}> <button key={uuidv4()} data-key={obj.id} className='buttonStyle' data-tools={obj} onClick={() => onClickButton({ obj })}  >{obj}</button> </span>)
                     }
                 </div>
             </div>
