@@ -1,4 +1,4 @@
-[![image](https://github.com/Vladimir0657305/Job-listings-with-filtering/blob/main/Job-listings-with-filtering.gif)](https://github.com/Vladimir0657305/Job-listings-with-filtering)
+[![image](https://github.com/Vladimir0657305/Job-listings-with-filtering/blob/main/Job-listings-with-filtering.gif align="center")](https://github.com/Vladimir0657305/Job-listings-with-filtering)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -69,5 +69,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-[![Ashutosh's image]([https://github.com/Vladimir0657305/Job-listings-with-filtering/blob/main/Job-listings-with-filtering.gif](https://github.com/Vladimir0657305/Job-listings-with-filtering))
