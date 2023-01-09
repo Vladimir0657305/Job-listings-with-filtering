@@ -1,6 +1,7 @@
 .filter-block {
     position: fixed;
     top: 150px;
+    z-index: 3;
     width: 100%;
     max-width: 1200px;
     height: 80px;

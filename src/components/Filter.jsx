@@ -1,4 +1,5 @@
 import { useContext, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { filterContext } from '../App';
 import dataArr from '../data.json';
 import Card from './Card';
@@ -9,6 +10,7 @@ export default function Filter() {
     const { selectedData, setSelectedData } = useContext(filterContext);
     const { filterData, setFilterData } = useContext(filterContext);
     const { isFilterPress, setIsFilterPress } = useContext(filterContext);
+    const { updateFilterButton, setUpdateFilterButton } = useContext(filterContext);
     let selected = [];
     const svg = <svg height="16 " viewBox="0 0 200 200" width="16" >
         <path d="M114,100l49-49a9.9,9.9,0,0,0-14-14L100,86,51,37A9.9,9.9,0,0,0,37,51l49,49L37,149a9.9,9.9,0,0,0,14,14l49-49,49,49a9.9,9.9,0,0,0,14-14Z" />
@@ -34,30 +36,30 @@ export default function Filter() {
     let newDataArr = dataArr.filter(obj => { return selected.includes(obj.id) })
 
     const onClickButtonFilter = (item) => {
-        // if (filterData.includes(item)) {
-        //     setFilterData(prev => prev.filter(_id => _id != item));
-        //     console.log(filterData);
-        // }
-        // else {
-        //     setFilterData(filterData => [...filterData, item]);
-        // }
-        // setIsFilterPress(true);
+        setUpdateFilterButton(prev => item);
+        console.log(item)
+        // setFilterData(prev => prev.filter(_id => _id != item));
+        // setIsFilterPress(true)
     }
-    
+
 
     return (
         <>
-            
-            <div className='card-body filter-block'>
-                {
-                    selectedData.map(item => <span key={uuidv4()}> <button onClick={onClickButtonFilter(item)} className='buttonStyleFilter' key={item}>{item} {svg}</button> </span>)
-                }
-            </div>
-                {
-                newDataArr.map((item, ind) => <Card key={uuidv4()} items={item} />)
-                }
+            <AnimatePresence>
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} key={uuidv4()} layout className='card-body filter-block'>
+                    {
+                        selectedData.map((item, ind) => <span key={uuidv4()}> <button onClick={() => onClickButtonFilter(item)} className='buttonStyleFilter' key={item}>{item} {svg}</button> </span>)
+                    }
+                </motion.div>
 
-            {/* {
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} key={uuidv4()} layout>
+                    {
+                        newDataArr.map((item, ind) => <Card key={uuidv4()} items={item} />)
+                    }
+                </motion.div>
+
+
+                {/* {
                 newDataArr.map((_, ind) =>
                     <div className={newDataArr[ind].featured ? "card-body featured" : 'card-body'}>
                         <div className='card-body__left'>
@@ -96,6 +98,7 @@ export default function Filter() {
                     </div>
                 )
             } */}
+            </AnimatePresence>
         </>
     );
 }
