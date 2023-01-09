@@ -13,16 +13,9 @@ function App() {
   const [selectedData, setSelectedData] = useState([]);
   let uniqArr =[];
 
-  console.log('AAAPPPPPP+++', isFilterPress, 'filterData===', filterData, 'selectedData==', selectedData);
-  // console.log(selectedId);
-  // console.log(isFilterPress);
   useEffect(() => {
-    console.log(isFilterPress);
-    // let uniqArr = Array.from(new Set(filterData));
     if(Array.from(new Set(filterData))) uniqArr = Array.from(new Set(filterData));
-    console.log('uniqArr==', uniqArr);
     setSelectedData( Array.from(new Set(filterData)));
-
     setIsFilterPress(false);
   }, [isFilterPress])
   

@@ -7,7 +7,8 @@ import './Filter.scss';
 export default function Filter() {
     const { v4: uuidv4 } = require('uuid');
     const { selectedData, setSelectedData } = useContext(filterContext);
-    const [selectedItem, setSelectedItem] = useState([]);
+    const { filterData, setFilterData } = useContext(filterContext);
+    const { isFilterPress, setIsFilterPress } = useContext(filterContext);
     let selected = [];
     const svg = <svg height="16 " viewBox="0 0 200 200" width="16" >
         <path d="M114,100l49-49a9.9,9.9,0,0,0-14-14L100,86,51,37A9.9,9.9,0,0,0,37,51l49,49L37,149a9.9,9.9,0,0,0,14,14l49-49,49,49a9.9,9.9,0,0,0,14-14Z" />
@@ -32,18 +33,24 @@ export default function Filter() {
 
     let newDataArr = dataArr.filter(obj => { return selected.includes(obj.id) })
 
-    const onClickButtonFilter = () => {
-
+    const onClickButtonFilter = (item) => {
+        // if (filterData.includes(item)) {
+        //     setFilterData(prev => prev.filter(_id => _id != item));
+        //     console.log(filterData);
+        // }
+        // else {
+        //     setFilterData(filterData => [...filterData, item]);
+        // }
+        // setIsFilterPress(true);
     }
     
-    // console.log('uniq===', uniq);
 
     return (
         <>
             
             <div className='card-body filter-block'>
                 {
-                    selectedData.map(item => <span key={uuidv4()}> <button onClick={onClickButtonFilter} className='buttonStyleFilter' key={item}>{item} {svg}</button> </span>)
+                    selectedData.map(item => <span key={uuidv4()}> <button onClick={onClickButtonFilter(item)} className='buttonStyleFilter' key={item}>{item} {svg}</button> </span>)
                 }
             </div>
                 {
