@@ -70,6 +70,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 <div id="footer" align="center">
-  <img src="[https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif](https://github.com/Vladimir0657305/Job-listings-with-filtering/blob/main/Job-listings-with-filtering.gif)" width="auto"/>
+  <img src="[https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif](https://github.com/Vladimir0657305/Job-listings-with-filtering/blob/main/Job-listings-with-filtering.gif)" width="400"/>
 </div>
 [![Ashutosh's image](https://activity-graph.herokuapp.com/graph?username=Ashutosh00710)](https://github.com/Vladimir0657305/Job-listings-with-filtering/blob/main/Job-listings-with-filtering.gif)
