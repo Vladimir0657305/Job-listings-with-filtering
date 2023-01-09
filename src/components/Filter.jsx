@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, LayoutGroup } from 'framer-motion';
 import { filterContext } from '../App';
 import dataArr from '../data.json';
 import Card from './Card';
@@ -45,14 +45,14 @@ export default function Filter() {
 
     return (
         <>
-            <AnimatePresence>
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} key={uuidv4()} layout className='card-body filter-block'>
+            <LayoutGroup>
+                <div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} key={uuidv4()}  className='card-body filter-block'>
                     {
-                        selectedData.map((item, ind) => <span key={uuidv4()}> <button onClick={() => onClickButtonFilter(item)} className='buttonStyleFilter' key={item}>{item} {svg}</button> </span>)
+                        selectedData.map((item, ind) => <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} key={uuidv4()}> <button onClick={() => onClickButtonFilter(item)} className='buttonStyleFilter' key={item}>{item} {svg}</button> </motion.span>)
                     }
-                </motion.div>
+                </div>
 
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} key={uuidv4()} layout>
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} key={uuidv4()} >
                     {
                         newDataArr.map((item, ind) => <Card key={uuidv4()} items={item} />)
                     }
@@ -98,7 +98,7 @@ export default function Filter() {
                     </div>
                 )
             } */}
-            </AnimatePresence>
+            </LayoutGroup>
         </>
     );
 }

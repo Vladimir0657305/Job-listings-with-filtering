@@ -2,7 +2,7 @@ import Header from './components/Header';
 import Main from './components/Main';
 import Filter from './components/Filter';
 import { createContext, useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, LayoutGroup} from 'framer-motion';
 import './App.css';
 
 
@@ -34,15 +34,15 @@ function App() {
 
   return (
     <filterContext.Provider value={{ isFilterPress, setIsFilterPress, filterData, setFilterData, selectedData, setSelectedData, updateFilterButton, setUpdateFilterButton }}>
-      <AnimatePresence>
-        <motion.div key={uuidv4()} className="App" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+      
+        <div key={uuidv4()} className="App" >
           <Header />
           {
             selectedData.length > 0 ? <Filter /> : <Main />
           }
 
-        </motion.div>
-      </AnimatePresence>
+        </div>
+      
     </filterContext.Provider>
   );
 }
