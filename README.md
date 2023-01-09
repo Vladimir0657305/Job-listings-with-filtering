@@ -71,3 +71,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ![image] (https://github.com/Vladimir0657305/Job-listings-with-filtering/blob/main/Job-listings-with-filtering.gif)
 ![image] (<img src="[https://github.com/Vladimir0657305/Job-listings-with-filtering/blob/main/Job-listings-with-filtering.gif]" alt="image">)
+[![Ashutosh's image](https://activity-graph.herokuapp.com/graph?username=Ashutosh00710)](https://github.com/Vladimir0657305/Job-listings-with-filtering/blob/main/Job-listings-with-filtering.gif)
