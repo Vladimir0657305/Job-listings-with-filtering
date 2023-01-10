@@ -37,7 +37,11 @@
                 font-weight: 700;
                 margin-right: 10px;
                 color: #60b0b0;
-                
+                @media (max-width: 380px) {
+                    & span:first-child {
+                        font-size: 14px;
+                    }
+                }
             }
             & span:nth-child(2) {
                 font-size: calc(14px + (20 - 20) * ((100vw - 380px) / (1240 - 380)));
@@ -47,6 +51,11 @@
                 padding: 5px 10px;
                 border-radius: 15px;
                 background-color: #60b0b0;
+                @media (max-width: 380px) {
+                        & span:first-child {
+                            font-size: 14px;
+                        }
+                    }
             }
             & span:last-child {
                 font-size: calc(14px + (20 - 20) * ((100vw - 380px) / (1240 - 380)));
@@ -56,6 +65,11 @@
                 padding: 5px 10px;
                 border-radius: 15px;
                 background-color: #000;
+                @media (max-width: 380px) {
+                        & span:first-child {
+                            font-size: 14px;
+                        }
+                    }
             }
         }
         .left-second{
@@ -64,6 +78,11 @@
             &:hover {
                 color: #60b0b0;
             }
+            @media (max-width: 380px) {
+                & span:first-child {
+                    font-size: 14px;
+                }
+            }
         }
         .left-third{
             span {
@@ -71,6 +90,11 @@
                 color: #808080;
                 color: hsl(180, 8%, 52%);
                 font-weight: 600;
+            }
+            @media (max-width: 380px) {
+                & span:first-child {
+                    font-size: 14px;
+                }
             }
         }
     }

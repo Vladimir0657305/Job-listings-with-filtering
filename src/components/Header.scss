@@ -10,3 +10,8 @@
     background-color: #94aeae;
     background-color: hsl(180, 8%, 52%);
 }
+@media (max-width: 380px) {
+    .background_image {
+        height: 100px;
+    }
+}
