@@ -14,13 +14,11 @@ export default function Card(items) {
         event.obj ? temp = event.obj : temp = event;
         if (filterData.includes(temp)) {
             setFilterData(prev => prev.filter(_id => _id != temp));
-            console.log(filterData);
         }
         else {
             setFilterData(filterData => [...filterData, temp]);
         }
         setIsFilterPress(true);
-        console.log(isFilterPress);
     }
 
     return (
@@ -48,14 +46,14 @@ export default function Card(items) {
                         </motion.div>
                     </motion.div>
 
-                    <motion.div key={uuidv4()} className='card-body__right'>
-                        <span> <button className='buttonStyle' data-key={param.id} data-role={param.role} onClick={() => onChangeFilterValue(param.role)} key={uuidv4()} >{param.role}</button> </span>
-                        <span> <button className='buttonStyle' data-key={param.id} data-level={param.level} onClick={() => onChangeFilterValue(param.level)} key={uuidv4()} >{param.level}</button> </span>
+                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} key={uuidv4()} className='card-body__right'>
+                        <span> <button className={filterData.includes(param.role) ? 'buttonStyle selected' : 'buttonStyle'} onClick={() => onChangeFilterValue(param.role)} key={uuidv4()} >{param.role}</button> </span>
+                        <span> <button className={filterData.includes(param.level) ? 'buttonStyle selected' : 'buttonStyle'} onClick={() => onChangeFilterValue(param.level)} key={uuidv4()} >{param.level}</button> </span>
                         {
-                            param.languages.map((obj, i) => <span key={obj + i}> <button key={uuidv4()} data-key={obj.id} className='buttonStyle' data-languages={obj} onClick={() => onChangeFilterValue({ obj })}  >{obj}</button> </span>)
+                            param.languages.map((obj, i) => <span key={uuidv4()}> <button key={uuidv4()} className={filterData.includes(obj) ? 'buttonStyle selected' : 'buttonStyle'} onClick={() => onChangeFilterValue({ obj })}  >{obj}</button> </span>)
                         }
                         {
-                            param.tools.map((obj, i) => <span key={obj + i}> <button key={uuidv4()} data-key={obj.id} className='buttonStyle' data-tools={obj} onClick={() => onChangeFilterValue({ obj })}  >{obj}</button> </span>)
+                            param.tools.map((obj, i) => <span key={uuidv4()}> <button key={uuidv4()} className={filterData.includes(obj) ? 'buttonStyle selected' : 'buttonStyle'} onClick={() => onChangeFilterValue({ obj })}  >{obj}</button> </span>)
                         }
                     </motion.div>
                 </motion.div>

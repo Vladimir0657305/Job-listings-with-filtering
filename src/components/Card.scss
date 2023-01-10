@@ -1,8 +1,9 @@
 .card-body {
     width: 100%;
-    max-width: 1200px;
-    height: auto;
-    margin: 30px 40px 0 40px;
+    // max-width: 1200px;
+    height: 200px;
+    margin: 40px 40px 0 40px;
+    // margin-top: 40px;
     background-color: #fff;
     box-shadow: 0 4px 8px 0 rgba(96, 176, 176, 0.2), 0 6px 20px 0 rgba(96, 176, 176, 0.2);
     border-left: none;
@@ -101,9 +102,18 @@
 .hidden {
     display: none;
 }
-@media (max-width: 767px) {
+.selected {
+    color: #fff;
+    background-color: #60b0b0;
+    &:hover {
+            color: #60b0b0;
+            background-color: #dfefef;
+        }
+}
+@media (max-width: 770px) {
     .card-body {
-        width: 90%;
+        width: 100%;
+        height: auto;
         margin: 50px 0px 0 0px;
         flex-direction: column;
     }
@@ -124,5 +134,11 @@
     .card-body__right {
         margin-left: 10px;
         margin-bottom: 20px;
+    }
+}
+@media (max-width: 380px) {
+    .card-body{
+        width: 90%;
+        height: auto;
     }
 }

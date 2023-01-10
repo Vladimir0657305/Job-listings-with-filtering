@@ -9,6 +9,8 @@ export default function Filter() {
     const { v4: uuidv4 } = require('uuid');
     const { selectedData, setSelectedData } = useContext(filterContext);
     const { updateFilterButton, setUpdateFilterButton } = useContext(filterContext);
+    const { filterData, setFilterData } = useContext(filterContext);
+    const { isFilterPress, setIsFilterPress } = useContext(filterContext);
     let selected = [];
     const svg = <svg height="16 " viewBox="0 0 200 200" width="16" >
         <path d="M114,100l49-49a9.9,9.9,0,0,0-14-14L100,86,51,37A9.9,9.9,0,0,0,37,51l49,49L37,149a9.9,9.9,0,0,0,14,14l49-49,49,49a9.9,9.9,0,0,0,14-14Z" />
@@ -29,21 +31,34 @@ export default function Filter() {
         setUpdateFilterButton(prev => item);
     }
 
+    const onClickClearButton = () => {
+        setFilterData('');
+        setIsFilterPress(true);
+    }
 
     return (
         <>
             <LayoutGroup>
-                <div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} key={uuidv4()} className='card-body filter-block'>
+                <div className='filter-block__top'>
+                    <div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} key={uuidv4()} className='filter-block'>
                     {
-                        selectedData.map((item, ind) => <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} key={uuidv4()}> <button onClick={() => onClickButtonFilter(item)} className='buttonStyleFilter' key={item}>{item} {svg}</button> </motion.span>)
+                        selectedData.map(item => <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} key={uuidv4()}> <button onClick={() => onClickButtonFilter(item)} className='buttonStyleFilter' key={item}>{item} {svg}</button> </motion.span>)
                     }
+                        <span key={uuidv4()} className='clearButtonStyle' onClick={() => onClickClearButton()} > Clear </span>
+                    </div>
                 </div>
+                
 
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} key={uuidv4()} >
                     {
-                        newDataArr.map((item, ind) => <Card key={uuidv4()} items={item} />)
+                        newDataArr.map(item => <Card key={uuidv4()} items={item} />)
+                    
                     }
                 </motion.div>
+                
+                
+
+                
             </LayoutGroup>
         </>
     );
