@@ -121,6 +121,11 @@
         color: #fff;
         background-color: #60b0b0;
     }
+    @media (max-width: 380px) {
+        & span:first-child {
+            font-size: 14px;
+        }
+    }
 }
 
 .hidden {
