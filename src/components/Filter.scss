@@ -61,6 +61,14 @@
         background-color: #000;
     }
     }
+    @media (max-width: 380px) {
+        font-size: 14px;
+        padding: 4px 10px;
+        & svg {
+            height: 24px;
+            width: 24px;
+        }
+    }
 }
 .clearButtonStyle {
     font-size: 18px;
@@ -105,5 +113,6 @@
         height: auto;
         flex-direction: row;
         flex-wrap: wrap;
+        font-size: 14px;
     }
 }
