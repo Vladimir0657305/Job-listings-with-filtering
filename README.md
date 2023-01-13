@@ -2,4 +2,4 @@
 
 [![image](https://github.com/Vladimir0657305/Job-listings-with-filtering/blob/main/Job-listings-with-filtering.gif)](https://github.com/Vladimir0657305/Job-listings-with-filtering)
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Vladimir0657305)](https://github.com/anuraghazra/github-readme-stats)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Vladimir0657305&layout=compact)](https://github.com/Vladimir0657305/github-readme-stats)
